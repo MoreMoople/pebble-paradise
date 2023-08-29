@@ -158,6 +158,24 @@
     -webkit-animation-duration: 1s;
     visibility: visible;
   }
+  .box-section{
+    display: flex;
+    align-items: center; /* Vertically center items */
+    padding: 20px;
+    border-top: 2px solid #f4511e;
+    border-bottom: 2px solid #f4511e;
+  }
+  .box-section img {
+    max-width: 350px; /* Adjust the width as needed */
+    margin-right: 20px; /* Add spacing between image and text */
+  }
+  .text-content{
+    flex: 1; /*allows text to take rest of width */
+  }
+  .text-content h2{
+    margin-bottom: 10px;
+  }
+
   @keyframes slide {
     0% {
       opacity: 0;
@@ -227,7 +245,16 @@
 
 <div class="jumbotron text-center">
   <h1>Pebble Paradise</h1> 
-  <p>We specialize in blablabla</p> 
+  <p>Caring for your precious rocks, one pebble at a time. </p> 
+</div>
+
+<!-- Extra home page description -->
+<div class="box-section">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHc5cTBtZ2M0bTBxOXlrZ2ZieXZqY3Jqd3FsNndqanExNG90dThueiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TejmLnMKgnmPInMQjV/200_d.gif" alt="Rock Image">
+    <div class="text-content">
+      <h2>Rocking the Art of Pet Care</h2>
+      <p>The rock pet sitting care that will nurture happy and healthy pet rocks with expert attention!</p>
+    </div>
 </div>
 
 <!-- Container (Services Section) -->
@@ -237,39 +264,22 @@
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
       <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>Rocks stay happy with our caretakers who give them loving care and companionship.</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
       <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>Don't take us for granite, our services are rock-solid!</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-certificate logo-small"></span>
       <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>Here at Pebble Paradise, our workers are self-certified in all of our rock care services!</p>
     </div>
   </div>
+  <br><br>
 </div>
 
 <!-- Container (Packages Section) -->
@@ -319,7 +329,7 @@
           <h1>Camp Pebbleville</h1>
         </div>
         <div class="panel-body">
-          <p><strong><i>Join the ultimate rockin' summer camp! Unearth new friendships, build rock-solid connections,
+          <p><strong><i>Join our rockin' summer camp! Unearth new friendships, build rock-solid connections,
             and let your pet rock roll with the coolest stones in our 3-week extravaganza!</i></strong></p>
         </div>
         <div class="panel-footer">
@@ -336,13 +346,20 @@
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Company Page</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h2>About Us</h2><br>
+      <h4>At Pebble Paradise, we understand that pets come in all shapes and sizes, and that's why we're proud to introduce our unique 
+        services tailored specifically for rock enthusiasts. We recognize the special place that rocks hold in your heart. It's time to
+        give back to these steadfast companions that have been with you through thick and thin.</h4><br>
+      <p>We've crafted a paradise where your precious pet rocks can thrive. With a deep appreciation for geology and a passion for 
+        all things rocky, we've designed a safe and nurturing environment that caters to your mineral companions' every need. 
+        Become a part of our growing community of rock lovers who understand the value of these stoney companions. Contact us today to 
+        learn more about our services and how we can provide your pet rocks with the care, love, and attention they truly 
+        derserve. At Pebble Paradise, every rock is a cherished member of our family. </p>
       <br><button class="btn btn-default btn-lg">Get in Touch</button>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+      <!--<span class="glyphicon glyphicon-signal logo"></span>-->
+      <img src="https://ksr-ugc.imgix.net/assets/012/052/013/d7a4f119aeab2854417249c98065e412_original.jpg?ixlib=rb-4.1.0&crop=faces&w=1552&h=873&fit=crop&v=1463727551&auto=format&frame=1&q=92&s=e29df0d129522bd85677e110b1352080" height="200px" width="300px">
     </div>
   </div>
 </div>
