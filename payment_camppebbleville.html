@@ -1,0 +1,181 @@
+<html>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #648FFF;
+    padding: px 10px;
+}
+
+.white_container {
+  background: ghostwhite; 
+  font-size: 20px; 
+  padding: 20px; 
+  border: 1px solid lightgray; 
+  margin: 10px;
+}
+
+.card {
+    max-width: 500px;
+    margin: auto;
+    color: black;
+    border-radius: 20 px;
+}
+
+p {
+    margin: 0px;
+}
+
+.container .h8 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.btn.btn-primary {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto;
+
+}
+
+
+.btn.btn.btn-primary:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.btn.btn-primary:hover .fas.fa-arrow-right {
+    transform: translate(15px);
+    transition: transform 0.2s ease-in;
+}
+
+.form-control {
+    color: white;
+    background-color: #785EF0;
+    border: 2px solid transparent;
+    height: 40px;
+    width: 400px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.form-control:focus {
+    color: white;
+    background-color: #0C4160;
+    border: 2px solid #2d4dda;
+    box-shadow: none;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 2px
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.br {
+  display: block;
+  margin-bottom: 0.4em;
+}
+
+.br1 {
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+}
+</style>
+
+<div class="white_container">
+
+<div class="container p-0">
+        <div class="card px-4">
+            <p class="h8 py-3">Payment Details</p>
+            <span class="br"></span>
+            <div class="row gx-3">
+                <!--<div class="col-12"> -->
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">Person Name</p>
+                        <input class="form-control mb-3" type="text" placeholder="Name" value="Dwayne Johnson">
+                    </div>
+                </div>
+                <span class="br"></span>
+                <!--<div class="col-12">-->
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">DB Charge Number</p>
+                        <input class="form-control mb-3" type="text" placeholder="1234 5678">
+                    </div>
+                </div>
+                <span class="br"></span>
+                <!--<div class="row">
+                <div class="column">-->
+                <div class="col-6">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">Expiration Date</p>
+                        <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                    </div>
+                </div>
+                 <span class="br"></span>
+              <!--  </div> -->
+  <div class="column">
+                <div class="col-6">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">DVV/DVC</p>
+                        <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+              <!--      </div> -->
+              <span class="br1"></span>
+                </div>
+                </div>
+</div>
+
+                <div class="col-12">
+                    <div class="btn btn-primary mb-3">
+                    <b>
+                    
+                        <span class="ps-3">Pay 70 Doubloons</span>
+                    
+                    </b>
+                        <span class="fas fa-arrow-right"></span>
+                    </div>
+                </div>
+            </div>
+    <!--    </div>
+    </div> -->
+</div> 
+</html>
