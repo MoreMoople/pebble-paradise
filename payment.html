@@ -1,6 +1,8 @@
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 
 * {
     margin: 0;
@@ -9,14 +11,16 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #648FFF;
-    padding: px 10px;
+    padding: 20px 40px;
 }
+
 
 .white_container {
   background: ghostwhite; 
@@ -24,10 +28,12 @@ body {
   padding: 20px; 
   border: 1px solid lightgray; 
   margin: 10px;
+  width: 100%
 }
 
+
 .card {
-    max-width: 500px;
+    max-width: 80%;
     margin: auto;
     color: black;
     border-radius: 20 px;
@@ -37,10 +43,12 @@ p {
     margin: 0px;
 }
 
+
 .container .h8 {
     font-size: 30px;
     font-weight: 800;
     text-align: center;
+    
 }
 
 .btn.btn-primary {
@@ -76,7 +84,7 @@ p {
     background-color: #785EF0;
     border: 2px solid transparent;
     height: 40px;
-    width: 400px;
+    width: 100%;
     padding-left: 20px;
     vertical-align: middle;
 }
@@ -119,7 +127,10 @@ p {
 ::placeholder {
     font-size: 14px;
     font-weight: 600;
+    color: #F7EEDA;
 }
+
+  
 </style>
 
 <div class="white_container">
@@ -129,40 +140,33 @@ p {
             <p class="h8 py-3">Payment Details</p>
             <span class="br"></span>
             <div class="row gx-3">
-                <!--<div class="col-12"> -->
-                    <div class="d-flex flex-column">
-                        <p class="text mb-1">Person Name</p>
-                        <input class="form-control mb-3" type="text" placeholder="Name" value="Dwayne Johnson">
-                    </div>
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Person Name</p>
+                    <input class="form-control mb-3" type="text" placeholder="Dwayne Johnson">
+                </div>
+            </div>
+            <span class="br"></span>
+            
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">DB Charge Number</p>
+                    <input class="form-control mb-3" type="text" placeholder="1234 5678">
+                </div>
+            
+            <span class="br"></span>
+
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Expiration Date</p>
+                    <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
                 </div>
                 <span class="br"></span>
-                <!--<div class="col-12">-->
-                    <div class="d-flex flex-column">
-                        <p class="text mb-1">DB Charge Number</p>
-                        <input class="form-control mb-3" type="text" placeholder="1234 5678">
-                    </div>
-                </div>
-                <span class="br"></span>
-                <!--<div class="row">
-                <div class="column">-->
-                <div class="col-6">
-                    <div class="d-flex flex-column">
-                        <p class="text mb-1">Expiration Date</p>
-                        <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
-                    </div>
-                </div>
-                 <span class="br"></span>
-              <!--  </div> -->
-  <div class="column">
-                <div class="col-6">
+
                     <div class="d-flex flex-column">
                         <p class="text mb-1">DVV/DVC</p>
-                        <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
-              <!--      </div> -->
+                        <input class="form-control mb-3" type="password" placeholder="***">
+
               <span class="br1"></span>
                 </div>
-                </div>
-</div>
+
 
                 <div class="col-12">
                     <div class="btn btn-primary mb-3">
@@ -175,7 +179,6 @@ p {
                     </div>
                 </div>
             </div>
-    <!--    </div>
-    </div> -->
+            </div>
 </div> 
 </html>
