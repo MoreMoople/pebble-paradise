@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+window.onscroll = function() {
+  growShrinkLogo()
+};
+
+function growShrinkLogo() {
+  var Logo = document.getElementById("Logo")
+  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+    Logo.style.width = '30px';
+  } else {
+    Logo.style.width = '100px';
+  }
+}
+</script>
   <!-- Theme Made By www.w3schools.com -->
   <title>Pebble Paradise</title>
   <meta charset="utf-8">
@@ -239,7 +253,8 @@
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="#myPage">
-        <img src="PebbleParadise.png" alt="Logo" width="50px" height="50px">
+        <img src="https://cdn.discordapp.com/attachments/1143283046079025352/1146660499736502282/IMG_2367.png" style="width:100px" id='Logo'>
+        <!-- alt="Logo" width="50px" height="50px">-->
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
