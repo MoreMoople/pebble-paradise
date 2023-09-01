@@ -1,0 +1,129 @@
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400;700&display=swap");
+  
+
+    /* 
+    CONTACT FORM EXAMPLE FOR FORMCARRY
+
+    IMPORTANT NOTE:
+    PLEASE ADD formcarryForm class to your form element
+    to apply the styles.
+    */
+
+    * {
+        box-sizing: border-box;
+
+        /* colors */
+        --color-blue: #2552d0;
+        --color-light-blue: #3266e3;
+        --color-gray: #e5e7eb;
+        --color-dark-gray: #9da3ae;
+        --color-pink: #edadd2;
+
+        /* container */
+        --c-width: 50%;
+        --c-max-width: 500px;
+    }
+
+    body {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .formcarryContainer {
+        width: var(--c-width);
+        max-width: var(--c-max-width);
+        display: block;
+        margin: 10vh auto 0 auto;
+    }
+
+    .formcarryForm label {
+        display: block;
+        padding: 12px 0 2px 0;
+        letter-spacing: -0.2px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .formcarryForm input,
+    .formcarryForm textarea {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: var(--color-gray);
+        border: none;
+        border: 4px solid var(--color-gray);
+        outline: none;
+        border-radius: 8px;
+        color: var(--color-dark-gray);
+    }
+
+    .formcarryForm input:focus,
+    .formcarryForm textarea:focus {
+        background-color: #fff;
+        color: var(--color-dark-gray);
+    }
+
+    .formcarryForm input:focus:required:invalid {
+        border-color: var(--color-pink);
+        background-color: #fff;
+    }
+
+    .formcarryForm button {
+        display: block;
+        margin-top: 12px;
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 8px;
+        background-color: #648FFF;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+
+        transition: 300ms all;
+    }
+
+    .formcarryForm button:hover {
+        background-color: #785EF0;
+    }
+
+    .formcarry-alert {
+        padding: 12px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 12px;
+        display: none;
+    }
+
+    .formcarry-alert.visible {
+        display: block;
+    }
+
+    .formcarry-alert.success {
+        background: #69cf9d;
+    }
+
+    .formcarry-alert.error {
+        background: #de524c;
+    }
+</style>
+
+
+<form class="formcarryForm" action="https://formcarry.com/s/v7_bh4Qsvp" method="POST">
+  <label for="firstNameInput">First Name</label>
+  <input type="text" id="firstNameInput" />
+
+  <label for="lastNameInput">Last Name</label>
+  <input type="text" id="lastNameInput" />
+
+  <label for="emailInput">Email</label>
+  <input type="email" id="emailInput" />
+
+  <label for="messageInput">Message</label>
+  <textarea id="messageInput" cols="30" rows="10"></textarea>
+
+  <button type="submit">Submit</button>
+</form>
