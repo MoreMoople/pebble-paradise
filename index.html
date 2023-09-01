@@ -407,18 +407,42 @@ function growShrinkLogo() {
       <p><span class="glyphicon glyphicon-envelope"></span> pebbleparadisepeople@gmail.com</p>
     </div>
     <div class="col-sm-7 slideanim">
+      
+      <form id="contact_form" action="contact.php" method="POST" enctype="multipart/form-data">
+        
       <div class="row">
+        
+        <label class="required" for="name">Your name:</label><br />
+        
         <div class="col-sm-6 form-group">
           <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          
+          <span id="name_validation" class="error_message"></span>
+        
         </div>
         <div class="col-sm-6 form-group">
+
+          <label class="required" for="email">Your email:</label><br />
+          
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+
+          <span id="email_validation" class="error_message"></span>
+          
         </div>
       </div>
+
+      <label class="required" for="message">Your message:</label><br />
+        
       <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+
+      <span id="message_validation" class="error_message"></span>
+        
       <div class="row">
         <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
+
+          <input id="submit_button" type="submit" value="Send" />
+        </form>
+          <!-- <button class="btn btn-default pull-right" type="submit">Send</button> -->
         </div>
       </div>
     </div>
