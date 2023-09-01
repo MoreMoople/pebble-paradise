@@ -1,129 +1,241 @@
-<style>
-    @import url("https://fonts.googleapis.com/css?family=Montserrat:wght@400;700&display=swap");
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <title>My Demo Form</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:wght@400;500;700&amp;display=swap">
+</head>
+<body>
+  <div class="container">
+    <div class="form-wrapper">
+     
 
-    /* 
-    CONTACT FORM EXAMPLE FOR FORMCARRY
+      <section class="formcarry-container">
+        <form action="https://formcarry.com/s/v7_bh4Qsvp" method="POST" target="_blank" enctype="multipart/form-data">
+          
+          <div class="formcarry-block">
+            <label for="fc-generated-1-name">Full Name</label>
+            <input type="text" name="name" id="fc-generated-1-name" placeholder="Your first and last name" />
+          </div>
+          
+          <div class="formcarry-block">
+            <label for="fc-generated-1-email">Your Email Address</label>
+            <input type="email" name="email" id="fc-generated-1-email" placeholder="john@doe.com" />
+          </div>
+          
+          <div class="formcarry-block">
+            <label for="fc-generated-1-message">Your message</label>
+            <textarea name="message" name="message" id="fc-generated-1-message" placeholder="Enter your message..."></textarea>
+          </div>
+          
+          <div class="formcarry-block">  
+            <button type="submit">Send</button>
+          </div>
+        
+          <a id="fc-notice" href="https://formcarry.com/">
+            <span>Forms by</span>
+            <img
+              src="https://carrier.formcarry.com/templates/common/formcarry_footer_logo.svg"
+              width="113"
+              height="20"
+            />
+          </a>
+        </form>
+      </section>
+      
+      <!-- Form Styles -->
+      <style>
+        
+          @import url('https://fonts.googleapis.com/css?family=Montserrat:wght@400;500&display=swap');
+      
+          .formcarry-container {
+            box-sizing: border-box;
+            margin: 40px auto 0 auto;
+            padding: 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: -0.01em;
+      
+            width: 400px;
+      
+            /* NORMAL */
+            --fc-border-color: #ECEFF9;
+            --fc-normal-text-color: #0E0B3D;
+            --fc-normal-placeholder-color: #B3B8D0;
+      
+            /* PRIMARY COLOR | HSL FORMAT*/
+            --fc-primary-color-hue: 220;
+            --fc-error-color-hue: 356;
+            --fc-primary-hsl: var(--fc-primary-color-hue), 100%, 54%;
+            --fc-error-hsl: var(--fc-error-color-hue), 100%, 54%;
+      
+            /* HOVER */
+            --fc-field-hover-bg-color: #F7F9FC;
+            --fc-border-hover-color: #DDE0EE;
+            --fc-field-hover-text-color: #B3B8D0;
+      
+            --fc-border-active-color: #1463FF;
+          }
+      
+          .formcarry-container * {
+            box-sizing: border-box;
+          }
+      
+          .formcarry-container label {
+            display: block;
+            cursor: pointer;
+          }
+      
+          .formcarry-container .formcarry-block:not(:first-child) {
+            margin-top: 16px;
+          }
+      
+          /*=============================================
+          =            Fields           =
+          =============================================*/
+          
+          .formcarry-container input,
+          .formcarry-container textarea,
+          .formcarry-container select {
+            margin-top: 4px;
+            width: 100%;
+            height: 42px;
+            border: 1px solid var(--fc-border-color);
+            box-shadow: 0 1px 2px var(--fc-border-color);
+            color: var(--fc-normal-text-color);
+            border-radius: 10px;
+            padding: 8px 12px;
+            
+            font-family: "Montserrat", sans-serif;
+            font-size:14px;
+            transition: 125ms background, 125ms color, 125ms box-shadow;
+          }
+      
+          .formcarry-container textarea{
+            min-height: 188px;
+            max-width: 100%;
+            padding-top: 12px;
+          }
+      
+          .formcarry-container input::placeholder,
+          .formcarry-container textarea::placeholder,
+          .formcarry-container select::placeholder {
+            color: var(--fc-normal-placeholder-color);
+          }
+      
+          .formcarry-container input:hover,
+          .formcarry-container textarea:hover,
+          .formcarry-container select:hover {
+            border-color: var(--fc-border-hover-color);
+            background-color: var(--fc-field-hover-bg-color);
+          }
+      
+          .formcarry-container input:hover::placeholder,
+          .formcarry-container textarea:hover::placeholder,
+          .formcarry-container select:hover::placeholder {
+            color: var(--fc-field-hover-text-color);
+          }
+      
+          .formcarry-container input:focus,
+          .formcarry-container textarea:focus,
+          .formcarry-container select:focus {
+            background-color: #fff;
+            border: 2px solid hsl(var(--fc-primary-hsl));
+            box-shadow: hsla(var(--fc-primary-hsl), 8%) 0px 0px 0px 3px;
+            outline: none;
+          }
+      
+          .formcarry-container input:focus,
+          .formcarry-container select:focus {
+            padding: 8px 11px;
+          }
+      
+          .formcarry-container textarea:focus {
+            padding: 11px;
+          }
+      
+          .formcarry-container select {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.9997 14.5001L8.46387 10.9642L9.64303 9.78589L11.9997 12.1434L14.3564 9.78589L15.5355 10.9642L11.9997 14.5001Z' fill='%236C6F93'/%3E%3C/svg%3E%0A");
+            /* background-position: calc(100% - 20px) calc(1em + 4px), calc(100% - 15px) calc(1em + 4px); */
+            background-size: 24px 24px;
+            background-position: 98%;
+            background-repeat: no-repeat;
+            appearance: none;
+            -webkit-appearance: none;
+          }
+      
+          .formcarry-container button {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: -0.02em;
+            height: 40px;
+            line-height: 24px;
+            width: 100%;
+            border: 0;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #648FFF;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 transparent;
+            
+            transition: 125ms all;
+          }
+          
+          .formcarry-container button:hover {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), hsla(var(--fc-primary-hsl));
+          }
+          
+          .formcarry-container button:focus {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), hsla(var(--fc-primary-hsl));
+            border-inline: 1px solid inline rgba(255, 255, 255, 0.6);
+            box-shadow: 0px 0px 0px 3px rgba(var(--fc-primary-hsl), 12%);
+          }
+      
+          .formcarry-container button:active {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), hsla(var(--fc-primary-hsl));
+          }
+      
+          .formcarry-container button:disabled {
+            background-color: hsla(var(--fc-primary-hsl), 40%);
+            cursor: not-allowed;
+          }
+      
+          .formcarry-container input:focus:required:invalid,
+          .formcarry-container input:focus:invalid, 
+          .formcarry-container select:focus:required:invalid,
+          .formcarry-container select:focus:invalid
+          {
+            color: hsl(var(--fc-error-hsl)); 
+            border-color: hsl(var(--fc-error-hsl));
+            box-shadow: 0px 0px 0px 3px hsla(var(--fc-error-hsl), 12%);
+          }
 
-    IMPORTANT NOTE:
-    PLEASE ADD formcarryForm class to your form element
-    to apply the styles.
-    */
+          #fc-notice {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            color: #6C6F93;
 
-    * {
-        box-sizing: border-box;
-
-        /* colors */
-        --color-blue: #2552d0;
-        --color-light-blue: #3266e3;
-        --color-gray: #e5e7eb;
-        --color-dark-gray: #9da3ae;
-        --color-pink: #edadd2;
-
-        /* container */
-        --c-width: 50%;
-        --c-max-width: 500px;
-    }
-
-    body {
-        font-family: "Montserrat", sans-serif;
-    }
-
-    .formcarryContainer {
-        width: var(--c-width);
-        max-width: var(--c-max-width);
-        display: block;
-        margin: 10vh auto 0 auto;
-    }
-
-    .formcarryForm label {
-        display: block;
-        padding: 12px 0 2px 0;
-        letter-spacing: -0.2px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 700;
-    }
-
-    .formcarryForm input,
-    .formcarryForm textarea {
-        font-size: 16px;
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background-color: var(--color-gray);
-        border: none;
-        border: 4px solid var(--color-gray);
-        outline: none;
-        border-radius: 8px;
-        color: var(--color-dark-gray);
-    }
-
-    .formcarryForm input:focus,
-    .formcarryForm textarea:focus {
-        background-color: #fff;
-        color: var(--color-dark-gray);
-    }
-
-    .formcarryForm input:focus:required:invalid {
-        border-color: var(--color-pink);
-        background-color: #fff;
-    }
-
-    .formcarryForm button {
-        display: block;
-        margin-top: 12px;
-        width: 100%;
-        padding: 12px 20px;
-        border-radius: 8px;
-        background-color: #648FFF;
-        color: #fff;
-        font-weight: 700;
-        font-size: 18px;
-
-        transition: 300ms all;
-    }
-
-    .formcarryForm button:hover {
-        background-color: #785EF0;
-    }
-
-    .formcarry-alert {
-        padding: 12px;
-        border-radius: 10px;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 400;
-        margin-top: 12px;
-        display: none;
-    }
-
-    .formcarry-alert.visible {
-        display: block;
-    }
-
-    .formcarry-alert.success {
-        background: #69cf9d;
-    }
-
-    .formcarry-alert.error {
-        background: #de524c;
-    }
-</style>
-
-
-<form class="formcarryForm" action="https://formcarry.com/s/v7_bh4Qsvp" method="POST">
-  <label for="firstNameInput">First Name</label>
-  <input type="text" id="firstNameInput" />
-
-  <label for="lastNameInput">Last Name</label>
-  <input type="text" id="lastNameInput" />
-
-  <label for="emailInput">Email</label>
-  <input type="email" id="emailInput" />
-
-  <label for="messageInput">Message</label>
-  <textarea id="messageInput" cols="30" rows="10"></textarea>
-
-  <button type="submit">Submit</button>
-</form>
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 24px;
+          }
+      
+          /*=====  End of Fields  ======*/
+      </style>
+    </div>  
+  </div>
+</body>
+</html>
