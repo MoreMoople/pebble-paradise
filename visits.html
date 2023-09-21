@@ -69,12 +69,9 @@ body {
 
 
 
-    <script>
-// Get a reference to the response div
-const responseDiv = document.getElementById('response');
-
-// <script>
-//   var counterContainer = document.querySelector(".website-counter");
+  
+<script>
+  var counterContainer = document.querySelector(".website-counter");
 
   // Replace 'https://unique-visitors.pebbleparadisepeople.workers.dev/' with the URL you want to fetch data from
   var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
@@ -93,10 +90,11 @@ const responseDiv = document.getElementById('response');
     })
     .catch(error => {
       console.error('Fetch error:', error);
-      counterContainer.innerHTML = 'Error loading data'; // Display an error message
+      counterContainer.innerHTML = 'Error loading data!'; // Display an error message
     });
 </script>
-  
+
+
 <!-- 
 // Fetch data from the Cloudflare Worker endpoint
 fetch('https://unique-visitors.pebbleparadisepeople.workers.dev/')
