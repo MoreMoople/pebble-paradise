@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDG392MCRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NDG392MCRE');
+</script>
+  
 <script>
 window.onscroll = function() {
   growShrinkLogo()
@@ -108,7 +118,7 @@ function growShrinkLogo() {
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
   .panel-footer .btn:hover {
-    border: 1px solid #648fff;
+    border: 2px solid #648fff;
     background-color: #fff !important;
     color: #648fff;
   }
@@ -135,8 +145,18 @@ function growShrinkLogo() {
   .panel-footer .btn {
     margin: 15px 0;
     background-color: #fe6100;
-    color: #fff;
+    border: 2px solid #fe6100;
+    color: white !important;
+    text-decoration: none;
   }
+  
+  ba:link, ba:visited {
+  background-color: #fe6100;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+  
   .navbar {
     margin-bottom: 0;
     background-color: #648fff;
@@ -218,9 +238,11 @@ function growShrinkLogo() {
     .btn-lg {
       width: 100%;
       margin-bottom: 35px;
+      color: white;
+      background-color: #fe6100;
     }
     .btn-orange {
-      background-color: #f4511e
+      background-color: #fe6100;
       width: 100%;
       margin-bottom: 35px;
     }
@@ -252,19 +274,20 @@ function growShrinkLogo() {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">
+      <div class="navbar-brand" href="#myPage">
         <img src="https://cdn.discordapp.com/attachments/1143283046079025352/1146660499736502282/IMG_2367.png" style="width:100px" id='Logo'>
         <!-- alt="Logo" width="50px" height="50px">-->
-      </a>
+      </div>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#packages">PACKAGES</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="https://pebbleparadise.com/contact.html">CONTACT</a></li>
         <li><a href="https://pebbleparadise.com/careers.html">CAREERS</a></li>
         <li><a href="https://pebbleparadise.com/blog.html">BLOG</a></li>
+        <li><a href="https://pebbleparadise.com/visits.html">VISITS</a></li>
       </ul>
     </div>
   </div>
@@ -331,7 +354,7 @@ function growShrinkLogo() {
         <div class="panel-footer">
           <h3>35 Doubloons</h3>
           <h4>per month</h4>
-          <button class="btn btn-orange">
+          <button class="btn">  
           <a href="https://pebbleparadise.com/payment.html">Sign Up</a></button>
         </div>
       </div>      
@@ -349,7 +372,7 @@ function growShrinkLogo() {
         <div class="panel-footer">
           <h3>45 Doubloons</h3>
           <h4>per day</h4>
-          <button class="btn btn-orange"><a href="https://pebbleparadise.com/payment_rocksitting.html">Sign Up</a></button>
+          <button class="btn"><a href="https://pebbleparadise.com/payment_rocksitting.html">Sign Up</a></button>
         </div>
       </div>      
     </div>       
@@ -365,7 +388,7 @@ function growShrinkLogo() {
         <div class="panel-footer">
           <h3>70 Doubloons</h3>
           <h4>per week</h4>
-          <button class="btn btn-orange"><a href="https://pebbleparadise.com/payment_camppebbleville.html">Sign Up</a></button>
+          <button class="btn"><a href="https://pebbleparadise.com/payment_camppebbleville.html">Sign Up</a></button>
         </div>
       </div>      
     </div>    
@@ -386,7 +409,7 @@ function growShrinkLogo() {
         learn more about our services and how we can provide your pet rocks with the care, love, and attention they truly 
         derserve. At Pebble Paradise, every rock is a cherished member of our family. </p>
 
-        <br><button class="btn btn-default btn-lg"><a href="#contact">Get in Touch</a></button>
+        <!-- <br><button class="btn btn-default btn-lg"><a href="#contact">Get in Touch</a></button> -->
     </div>
     <div class="col-sm-4">
       <!--<span class="glyphicon glyphicon-signal logo"></span>-->
@@ -399,55 +422,27 @@ function growShrinkLogo() {
 <!-- Container (Contact Section) -->
 <div id="contact" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
+  <!-- <div class="row"> -->
+   <!-- <div class="col-sm-5"> -->
+   <div class="panel-footer">
+   <div class="text-center">
+   
+   
+    <button class="btn btn-orange">
+          <a href="https://pebbleparadise.com/contact.html">Send us an email</a></button>
+      <p>We'll get back to you within 24 hours.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Bedrock, Stone Age, America</p>
       <p><span class="glyphicon glyphicon-phone"></span> +1 800-PEBBLES</p>
       <p><span class="glyphicon glyphicon-envelope"></span> pebbleparadisepeople@gmail.com</p>
     </div>
+    <!-- </div> -->
     <div class="col-sm-7 slideanim">
       
-      <form id="contact_form" action="contact.php" method="POST" enctype="multipart/form-data">
-        
-      <div class="row">
-        
-        <label class="required" for="name">Your name:</label><br />
-        
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-          
-          <span id="name_validation" class="error_message"></span>
-        
-        </div>
-        <div class="col-sm-6 form-group">
-
-          <label class="required" for="email">Your email:</label><br />
-          
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-
-          <span id="email_validation" class="error_message"></span>
-          
-        </div>
-      </div>
-
-      <label class="required" for="message">Your message:</label><br />
-        
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-
-      <span id="message_validation" class="error_message"></span>
-        
-      <div class="row">
-        <div class="col-sm-12 form-group">
-
-          <input id="submit_button" type="submit" value="Send" />
-        </form>
-          <!-- <button class="btn btn-default pull-right" type="submit">Send</button> -->
+    
         </div>
       </div>
     </div>
-  </div>
-</div>
+
 
 <!-- Image of location/map -->
 <!-- <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%"> -->

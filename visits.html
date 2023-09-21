@@ -1,0 +1,112 @@
+<html>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDG392MCRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NDG392MCRE');
+</script>  
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/* Center child elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body,
+.website-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #648FFF;
+  color: white;
+}
+
+body {
+  height: 100vh;
+}
+
+/* Styles for website counter container */
+.website-counter {
+  background-color: #DC267F;
+  height: 50px;
+  width: 80px;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+</style>
+  <head>
+    <title>Website Counter</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>Website Visit Count:</div>
+<!--     <div class="website-counter"></div> -->
+    <div id="response"></div>
+  </body>
+  
+  <!-- <script async src="https://unique-visitors.pebbleparadisepeople.workers.dev/"></script> -->
+<!-- <script>
+  var counterContainer = document.querySelector(".website-counter");
+  var visitCount = 1;
+  counterContainer.innerHTML = visitCount;
+</script> -->
+
+
+
+    <script>
+// Get a reference to the response div
+const responseDiv = document.getElementById('response');
+
+// <script>
+//   var counterContainer = document.querySelector(".website-counter");
+
+  // Replace 'https://unique-visitors.pebbleparadisepeople.workers.dev/' with the URL you want to fetch data from
+  var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
+
+  // Fetch the website content
+  fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(data => {
+      // Display the content on the page
+      counterContainer.innerHTML = data; // Assuming the response is a string
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+      counterContainer.innerHTML = 'Error loading data'; // Display an error message
+    });
+</script>
+  
+<!-- 
+// Fetch data from the Cloudflare Worker endpoint
+fetch('https://unique-visitors.pebbleparadisepeople.workers.dev/')
+  .then((response) => response.text())
+  .then((data) => {
+    // Update the response div with the data
+    responseDiv.textContent = data.message;
+  })
+  .catch((error) => {
+    console.error('Error fetching data:', error);
+  });
+      </script> -->
+</html>
