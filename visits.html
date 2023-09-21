@@ -1,0 +1,69 @@
+<html>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDG392MCRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NDG392MCRE');
+</script>
+
+<script async src="https://unique-visitors.pebbleparadisepeople.workers.dev/"></script>
+<script>
+  var counterContainer = document.querySelector(".website-counter");
+  var visitCount = 1;
+  counterContainer.innerHTML = visitCount;
+</script>
+  
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/* Center child elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body,
+.website-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #648FFF;
+  color: white;
+}
+
+body {
+  height: 100vh;
+}
+
+/* Styles for website counter container */
+.website-counter {
+  background-color: #DC267F;
+  height: 50px;
+  width: 80px;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+</style>
+  <head>
+    <title>Website Counter</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>Website Visit Count:</div>
+    <div class="website-counter"></div>
+  </body>
+</html>
