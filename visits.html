@@ -42,40 +42,37 @@ body {
 </style>
   <head>
     <title>Website Counter</title>
-    <script defer src="index.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+<!--     <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" /> -->
   </head>
   <body>
     <div>Website Visit Count:</div>
     <div class="website-counter"></div>
   </body>
 
-  <!-- <script async src="https://unique-visitors.pebbleparadisepeople.workers.dev/"></script> -->
-<!-- <script>
-  var counterContainer = document.querySelector(".website-counter");
-  var visitCount = 1;
-  counterContainer.innerHTML = visitCount;
-</script> -->
-
+<!-- Load js for require funciton -->
+<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 <script>
-// const express = require('express');
-// const app = express();
 
-// // Enable CORS for a specific origin
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', 'https://unique-visitors.pebbleparadisepeople.workers.dev/');
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-//     res.header('Access-Control-Allow-Credentials', 'true');
-//     next();
-// });
 
+// trying to include headers to allow CORS
+const express = require(['require', 'express']);
+const app = express();
+
+const cors = require('cors');
+
+app.use(cors({
+  "origin": "https://unique-visitors.pebbleparadisepeople.workers.dev/",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}))
+  
 // Your API routes and logic here...
   var counterContainer = document.querySelector(".website-counter");
 
   // Replace 'https://unique-visitors.pebbleparadisepeople.workers.dev/' with the URL you want to fetch data from
   var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
-
   // Fetch the website content
   fetch(url)
     .then(response => {
@@ -93,13 +90,5 @@ body {
       counterContainer.innerHTML = 'Error loading data'; // Display an error message
     });
 
-// app.listen(3000, () => {
-//     console.log('Server is running on port 3000');
-// });
-
-  
-  
 </script>
-
-
 </html>
