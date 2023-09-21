@@ -56,7 +56,8 @@ body {
   </head>
   <body>
     <div>Website Visit Count:</div>
-    <div class="website-counter"></div>
+<!--     <div class="website-counter"></div> -->
+    <div id="response"></div>
   </body>
   
   <!-- <script async src="https://unique-visitors.pebbleparadisepeople.workers.dev/"></script> -->
@@ -66,8 +67,14 @@ body {
   counterContainer.innerHTML = visitCount;
 </script> -->
 
-<script>
-  var counterContainer = document.querySelector(".website-counter");
+
+
+    <script>
+// Get a reference to the response div
+const responseDiv = document.getElementById('response');
+
+// <script>
+//   var counterContainer = document.querySelector(".website-counter");
 
   // Replace 'https://unique-visitors.pebbleparadisepeople.workers.dev/' with the URL you want to fetch data from
   var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
@@ -90,5 +97,16 @@ body {
     });
 </script>
   
-
+<!-- 
+// Fetch data from the Cloudflare Worker endpoint
+fetch('https://unique-visitors.pebbleparadisepeople.workers.dev/')
+  .then((response) => response.text())
+  .then((data) => {
+    // Update the response div with the data
+    responseDiv.textContent = data.message;
+  })
+  .catch((error) => {
+    console.error('Error fetching data:', error);
+  });
+      </script> -->
 </html>
