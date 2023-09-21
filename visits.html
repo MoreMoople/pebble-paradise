@@ -57,19 +57,16 @@ body {
   <body>
     <div>Website Visit Count:</div>
 <!--     <div class="website-counter"></div> -->
-    <div id="response"></div>
+    <div id="website-counter"></div>
   </body>
   
-  <!-- <script async src="https://unique-visitors.pebbleparadisepeople.workers.dev/"></script> -->
+ 
 <!-- <script>
   var counterContainer = document.querySelector(".website-counter");
   var visitCount = 1;
   counterContainer.innerHTML = visitCount;
 </script> -->
 
-
-
-  
 <script>
   var counterContainer = document.querySelector(".website-counter");
 
@@ -90,21 +87,7 @@ body {
     })
     .catch(error => {
       console.error('Fetch error:', error);
-      counterContainer.innerHTML = 'Error loading data!'; // Display an error message
+      counterContainer.innerHTML = 'Error loading data'; // Display an error message
     });
 </script>
-
-
-<!-- 
-// Fetch data from the Cloudflare Worker endpoint
-fetch('https://unique-visitors.pebbleparadisepeople.workers.dev/')
-  .then((response) => response.text())
-  .then((data) => {
-    // Update the response div with the data
-    responseDiv.textContent = data.message;
-  })
-  .catch((error) => {
-    console.error('Error fetching data:', error);
-  });
-      </script> -->
 </html>
