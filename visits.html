@@ -42,8 +42,6 @@ body {
 </style>
   <head>
     <title>Website Counter</title>
-    <script defer src="index.js"></script>
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div>Website Visit Count:</div>
@@ -70,18 +68,19 @@ body {
 //     next();
 // });
 
-// trying to include headers to allow CORS
+// This code is to allow CORS 
   const express = require('express');
-const app = express();
+  const app = express();
 
-const cors = require('cors');
+  const cors = require('cors');
 
-app.use(cors({
-  "origin": "https://unique-visitors.pebbleparadisepeople.workers.dev/",
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-  "preflightContinue": false,
-  "optionsSuccessStatus": 204
-}))
+  app.use(cors({
+    "origin": "https://unique-visitors.pebbleparadisepeople.workers.dev/",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+  }))
+  
 // Your API routes and logic here...
   var counterContainer = document.querySelector(".website-counter");
 
