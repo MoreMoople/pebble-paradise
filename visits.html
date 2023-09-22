@@ -274,14 +274,13 @@ body {
 
 <script>
 
-// data collection here
-  
-// Your API routes and logic here...
+  // Variable that contains the website counter
   var counterContainer = document.querySelector(".website-counter");
 
-  // Replace 'https://unique-visitors.pebbleparadisepeople.workers.dev/' with the URL you want to fetch data from
+  // URL contains Cloudflare worker function where we want to fetch data from
   var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
-  //trying data collection
+  
+  // Collect user's data and store it into "info"
   document.addEventListener("DOMContentLoaded", function(){
     const info = {   browserLang: navigator.browserLanguage,
                      language: navigator.language,
@@ -291,19 +290,25 @@ body {
                      webdriver: navigator.webdriver,
                      geolocation: navigator.geolocation
                   } 
-    // const exists = getFingerprint(info);
-    // if(!exists){
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(info)                   
-        })
-      //} //end if
-  })//end event listener
+
+    // Talk to Cloudflare Worker function
+    // Once the info from the user is obtained, send the data to the worker function
+    // so that the worker function can store it into the database if it is different
+    // from any previous info entry or do nothing if it is the same
+    fetch(url, {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(info)                   
+    }) // end fetch
+      
+  }) //end document.addEventListener
                             
-  // Fetch the website content
+  // Fetch the content of the Cloudflare Worker function
+  // When the url of the Cloudflare Worker function is visited
+  // there is a number (the number of unique visitors we have registered in our database)
+  // This code gets that number so that it can be displayed on visits.html
   fetch(url)
     .then(response => {
       if (!response.ok) {
