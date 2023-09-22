@@ -85,8 +85,8 @@ body {
                      webdriver: navigator.webdriver,
                      geolocation: navigator.geolocation
                   } 
-    const exists = getFingerprint(info);
-    if(!exists){
+    // const exists = getFingerprint(info);
+    // if(!exists){
       fetch(url, {
         method: 'POST',
         headers: {
@@ -94,7 +94,7 @@ body {
         },
         body: JSON.stringify(info)                   
         })
-      } //end if
+      //} //end if
   })//end event listener
 
   //Check if fingerprint/unique user exists
