@@ -1,8 +1,72 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDG392MCRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NDG392MCRE');
+</script>
+
+<!-- Pebble Paradise tag (cloudflare) -->
+<script>
+
+  // URL contains Cloudflare worker function where we want to fetch data from
+  var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
+  
+  // Collect user's data and store it into "info"
+  document.addEventListener("DOMContentLoaded", function(){
+    const info = {   browserLang: navigator.browserLanguage,
+                     language: navigator.language,
+                     platform: navigator.platform,
+                     connectionSpeed: navigator.connectionSpeed,
+                     userAgent: navigator.UserAgent,
+                     webdriver: navigator.webdriver,
+                     geolocation: navigator.geolocation,
+                     deviceMemory: navigator.deviceMemory,
+                     networkInformation: navigator.networkInformation,
+                     connection: navigator.connection,
+                     globalPrivacyControl: navigator.globalPrivacyControl,
+                     maxTouchPoints: navigator.maxTouchPoints
+                  } 
+
+    // Talk to Cloudflare Worker function
+    // Once the info from the user is obtained, send the data to the worker function
+    // so that the worker function can store it into the database if it is different
+    // from any previous info entry or do nothing if it is the same
+    fetch(url, {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(info)                   
+    }) // end fetch
+      
+  }) //end document.addEventListener
+
+</script>
+  
+<script>
+window.onscroll = function() {
+  growShrinkLogo()
+};
+
+function growShrinkLogo() {
+  var Logo = document.getElementById("Logo")
+  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+    Logo.style.width = '30px';
+  } else {
+    Logo.style.width = '100px';
+  }
+}
+</script>
   <!-- Theme Made By www.w3schools.com -->
-  <title>Pebble Paradise</title>
+  <title>Pebble Paradise - Pet Rock Care Service of Your Dreams</title>
+  <meta name="description" content="Pebble Paradise provides pet rock care services such as grooming, pet rock sitting, and a pet rock camp that will house your pet rock while you are away!"
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -94,7 +158,7 @@
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
   .panel-footer .btn:hover {
-    border: 1px solid #648fff;
+    border: 2px solid #648fff;
     background-color: #fff !important;
     color: #648fff;
   }
@@ -121,8 +185,18 @@
   .panel-footer .btn {
     margin: 15px 0;
     background-color: #fe6100;
-    color: #fff;
+    border: 2px solid #fe6100;
+    color: white !important;
+    text-decoration: none;
   }
+  
+  ba:link, ba:visited {
+  background-color: #fe6100;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+  
   .navbar {
     margin-bottom: 0;
     background-color: #648fff;
@@ -204,9 +278,11 @@
     .btn-lg {
       width: 100%;
       margin-bottom: 35px;
+      color: white;
+      background-color: #fe6100;
     }
     .btn-orange {
-      background-color: #f4511e
+      background-color: #fe6100;
       width: 100%;
       margin-bottom: 35px;
     }
@@ -238,18 +314,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">
-        <img src="PebbleParadise.png" alt="Logo" width="50px" height="50px">
-      </a>
+      <div class="navbar-brand" href="#myPage">
+        <img src="https://cdn.discordapp.com/attachments/1143283046079025352/1146660499736502282/IMG_2367.png" style="width:100px" id='Logo'>
+        <!-- alt="Logo" width="50px" height="50px">-->
+      </div>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#packages">PACKAGES</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="https://pebbleparadise.com/contact.html">CONTACT</a></li>
         <li><a href="https://pebbleparadise.com/careers.html">CAREERS</a></li>
         <li><a href="https://pebbleparadise.com/blog.html">BLOG</a></li>
+        <li><a href="https://pebbleparadise.com/visits.html">VISITS</a></li>
       </ul>
     </div>
   </div>
@@ -264,8 +342,8 @@
 <div class="box-section">
     <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHc5cTBtZ2M0bTBxOXlrZ2ZieXZqY3Jqd3FsNndqanExNG90dThueiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TejmLnMKgnmPInMQjV/200_d.gif" alt="Rock Image">
     <div class="text-content">
-      <h2>Rocking the Art of Pet Care</h2>
-      <p>Welcome to our enchanting world of pet rock sitting care, where we specialize in providing the utmost nurturing care for your 
+      <h2>Rocking the Art of Pet Rock Care</h2>
+      <p>Welcome to our enchanting world of pet rock care services, where we specialize in providing the utmost nurturing care for your 
         beloved pet rocks, ensuring their eternal happiness and optimal well-being! We provide a meticulous blend of expert attention, 
         imaginative engagement, and a touch of magical charm! Join us in this perfect paradise for your pet rock!</p>
     </div>
@@ -285,7 +363,7 @@
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
       <h4>JOB DONE</h4>
-      <p>Don't take us for granite, our services are rock-solid!</p>
+      <p>Don't take us for granite, our pet rock care services are solid!</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-certificate logo-small"></span>
@@ -316,7 +394,7 @@
         <div class="panel-footer">
           <h3>35 Doubloons</h3>
           <h4>per month</h4>
-          <button class="btn btn-orange">
+          <button class="btn">  
           <a href="https://pebbleparadise.com/payment.html">Sign Up</a></button>
         </div>
       </div>      
@@ -334,7 +412,7 @@
         <div class="panel-footer">
           <h3>45 Doubloons</h3>
           <h4>per day</h4>
-          <button class="btn btn-orange"><a href="https://pebbleparadise.com/payment_rocksitting.html">Sign Up</a></button>
+          <button class="btn"><a href="https://pebbleparadise.com/payment_rocksitting.html">Sign Up</a></button>
         </div>
       </div>      
     </div>       
@@ -350,7 +428,7 @@
         <div class="panel-footer">
           <h3>70 Doubloons</h3>
           <h4>per week</h4>
-          <button class="btn btn-orange"><a href="https://pebbleparadise.com/payment_camppebbleville.html">Sign Up</a></button>
+          <button class="btn"><a href="https://pebbleparadise.com/payment_camppebbleville.html">Sign Up</a></button>
         </div>
       </div>      
     </div>    
@@ -371,11 +449,11 @@
         learn more about our services and how we can provide your pet rocks with the care, love, and attention they truly 
         derserve. At Pebble Paradise, every rock is a cherished member of our family. </p>
 
-        <br><button class="btn btn-default btn-lg"><a href="#contact">Get in Touch</a></button>
+        <!-- <br><button class="btn btn-default btn-lg"><a href="#contact">Get in Touch</a></button> -->
     </div>
     <div class="col-sm-4">
       <!--<span class="glyphicon glyphicon-signal logo"></span>-->
-      <img src="https://ksr-ugc.imgix.net/assets/012/052/013/d7a4f119aeab2854417249c98065e412_original.jpg?ixlib=rb-4.1.0&crop=faces&w=1552&h=873&fit=crop&v=1463727551&auto=format&frame=1&q=92&s=e29df0d129522bd85677e110b1352080" height="200px" width="300px">
+      <img src="https://live.staticflickr.com/4178/34542906211_0399b3bdd5_b.jpg" height="200px" width="300px">
     </div>
   </div>
 </div>
@@ -384,31 +462,27 @@
 <!-- Container (Contact Section) -->
 <div id="contact" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
+  <!-- <div class="row"> -->
+   <!-- <div class="col-sm-5"> -->
+   <div class="panel-footer">
+   <div class="text-center">
+   
+   
+    <button class="btn btn-orange">
+          <a href="https://pebbleparadise.com/contact.html">Send us an email</a></button>
+      <p>We'll get back to you within 24 hours.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Bedrock, Stone Age, America</p>
       <p><span class="glyphicon glyphicon-phone"></span> +1 800-PEBBLES</p>
       <p><span class="glyphicon glyphicon-envelope"></span> pebbleparadisepeople@gmail.com</p>
     </div>
+    <!-- </div> -->
     <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
+      
+    
         </div>
       </div>
     </div>
-  </div>
-</div>
+
 
 <!-- Image of location/map -->
 <!-- <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%"> -->
@@ -417,6 +491,13 @@
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
+  <h4>RESOURCES</h4>
+  <p>
+   A24 (2021). Everything Everywhere All At Once [Gif]. <a href="https://giphy.com/gifs/a24-jamie-lee-curtis-michelle-yeoh-everything-everywhere-all-at-once-TejmLnMKgnmPInMQjV?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=">giphy.com</a>
+  </p>
+  <p>
+  Shaull, L. (2017). Googly eyes in Rekjavik, Iceland [Photograph]. <a href="https://live.staticflickr.com/4178/34542906211_0399b3bdd5_b.jpg">staticflickr.com</a>
+  </p>
   <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
 </footer>
 
