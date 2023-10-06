@@ -184,6 +184,47 @@ p {
   margin-bottom: 0.75em;
 }
 
+/* Style for the horizontal button container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  
+}
+
+/* Style for each individual button */
+.button-container .btn {
+  flex: 1; /* Equal width for all buttons */
+  margin-right: 5px; /* Add some spacing between buttons */
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+/* Style for showing price on hover */
+.button-container .btn .button-price {
+  opacity: 0; /* Initially hide the price text */
+  transition: opacity 0.3s; /* Add a transition effect for smooth appearance */
+  margin-left: 5px; /* Add spacing between text and price */
+
+}
+
+.button-container .btn:hover .button-price {
+  opacity: 1; /* Show the price text on hover */
+}
+/* Show the price text on hover */
+.button-container .btn:hover .ps-3 {
+  display: none;
+}
+
+/* Show the regular text when not hovered */
+.button-container .btn:not(:hover) .ps-3 {
+  display: inline;
+}
+.button-container .btn:not(:hover) .button-price {
+  display: none;
+}
+
+
 ::placeholder {
     font-size: 14px;
     font-weight: 600;
@@ -192,9 +233,9 @@ p {
 
   
 </style>
-  
+
 <head><link rel="icon" href="https://pebbleparadise.com/PebbleParadise.png"></head>
-  
+
 <div class="white_container">
 
 <div class="container p-0">
@@ -231,14 +272,30 @@ p {
 
 
                 <div class="col-12">
-                    <div class="btn btn-primary mb-3">
-                    <b>
-                    
-                        <span class="ps-3">Pay 70 Doubloons</span>
-                    
-                    </b>
-                        <span class="fas fa-arrow-right"></span>
-                    </div>
+                    <!-- Horizontal button container -->
+        <div class="button-container">
+          <div class="btn btn-primary">
+            <b>
+              <span class="ps-3">Rock Grooming</span>
+              <span class="button-price">35 Doubloons</span>
+            </b>
+            <span class="fas fa-arrow-right"></span>
+          </div>
+          <div class="btn btn-primary">
+            <b>
+              <span class="ps-3">Rock Sitting</span>
+              <span class="button-price">45 Doubloons</span>
+            </b>
+            <span class="fas fa-arrow-right"></span>
+          </div>
+          <div class="btn btn-primary">
+            <b>
+              <span class="ps-3">Camp Pebbleville</span>
+              <span class="button-price">70 Doubloons</span>
+            </b>
+            <span class="fas fa-arrow-right"></span>
+          </div>
+        </div>
                 </div>
             </div>
             </div>
