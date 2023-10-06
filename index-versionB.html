@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MC3GSDJB');</script>
+<!-- End Google Tag Manager -->
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDG392MCRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NDG392MCRE');
+</script>
+
+<!-- Pebble Paradise tag (cloudflare) -->
+<script>
+
+  // URL contains Cloudflare worker function where we want to fetch data from
+  var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
+  
+  // Collect user's data and store it into "info"
+  document.addEventListener("DOMContentLoaded", function(){
+    const info = {   browserLang: navigator.browserLanguage,
+                     language: navigator.language,
+                     platform: navigator.platform,
+                     connectionSpeed: navigator.connectionSpeed,
+                     userAgent: navigator.UserAgent,
+                     webdriver: navigator.webdriver,
+                     geolocation: navigator.geolocation,
+                     deviceMemory: navigator.deviceMemory,
+                     networkInformation: navigator.networkInformation,
+                     connection: navigator.connection,
+                     globalPrivacyControl: navigator.globalPrivacyControl,
+                     maxTouchPoints: navigator.maxTouchPoints
+                  } 
+
+    // Talk to Cloudflare Worker function
+    // Once the info from the user is obtained, send the data to the worker function
+    // so that the worker function can store it into the database if it is different
+    // from any previous info entry or do nothing if it is the same
+    fetch(url, {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(info)                   
+    }) // end fetch
+      
+  }) //end document.addEventListener
+
+</script>
+  
+<script>
+window.onscroll = function() {
+  growShrinkLogo()
+};
+
+function growShrinkLogo() {
+  var Logo = document.getElementById("Logo")
+  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+    Logo.style.width = '30px';
+  } else {
+    Logo.style.width = '100px';
+  }
+}
+</script>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Pebble Paradise - Pet Rock Care Service of Your Dreams</title>
+  <meta name="description" content="Pebble Paradise provides pet rock care services such as grooming, pet rock sitting, and a pet rock camp that will house your pet rock while you are away!">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://pebbleparadise.com/PebbleParadise.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .button {
+    background-color: #f4511e 
+  }
+  .jumbotron {
+    background-color: #648fff;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #648fff;
+    font-size: 50px;
+  }
+  .logo {
+    color: #648fff;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #648fff;
+  }
+  .carousel-indicators li {
+    border-color: #648fff;
+  }
+  .carousel-indicators li.active {
+    background-color: #648fff;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #648fff; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 2px solid #648fff;
+    background-color: #fff !important;
+    color: #648fff;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #648fff !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #fe6100;
+    border: 2px solid #fe6100;
+    color: white !important;
+    text-decoration: none;
+  }
+  
+  ba:link, ba:visited {
+  background-color: #fe6100;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+  
+  .navbar {
+    margin-bottom: 0;
+    background-color: #648fff;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #648fff !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #648fff;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  .box-section{
+    display: flex;
+    align-items: center; /* Vertically center items */
+    padding: 20px;
+    border-top: 2px solid #f4511e;
+    border-bottom: 2px solid #f4511e;
+  }
+  .box-section img {
+    max-width: 350px; /* Adjust the width as needed */
+    margin-right: 20px; /* Add spacing between image and text */
+  }
+  .text-content{
+    flex: 1; /*allows text to take rest of width */
+  }
+  .text-content h2{
+    margin-bottom: 10px;
+  }
+
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+      color: white;
+      background-color: #fe6100;
+    }
+    .btn-orange {
+      background-color: #fe6100;
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    .box-section{
+      flex-direction: column; /*Stack items vertically*/
+      text-align: center;
+      padding: 10px; /*reduced for smaller screens*/
+    }
+    .box-section img{
+      max-width: 100%;
+      margin-right: 0; 
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC3GSDJB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" href="#myPage">
+        <img src="https://cdn.discordapp.com/attachments/1143283046079025352/1146660499736502282/IMG_2367.png" style="width:100px" id='Logo'>
+        <!-- alt="Logo" width="50px" height="50px">-->
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#packages">PACKAGES</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="https://pebbleparadise.com/contact.html">CONTACT</a></li>
+        <li><a href="https://pebbleparadise.com/careers.html">CAREERS</a></li>
+        <li><a href="https://pebbleparadise.com/blog.html">BLOG</a></li>
+        <li><a href="https://pebbleparadise.com/visits.html">VISITS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Pebble Paradise</h1> 
+  <p>Caring for your precious rocks, one pebble at a time. </p> 
+  <button class="btn button"><a href="https://pebbleparadise.com/quickPay.html" style="color: white;">Book Now!</a></button>
+</div>
+
+<!-- Extra home page description -->
+<div class="box-section">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHc5cTBtZ2M0bTBxOXlrZ2ZieXZqY3Jqd3FsNndqanExNG90dThueiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TejmLnMKgnmPInMQjV/200_d.gif" alt="Rock Image">
+    <div class="text-content">
+      <h2>Rocking the Art of Pet Rock Care</h2>
+      <p>Welcome to our enchanting world of pet rock care services, where we specialize in providing the utmost nurturing care for your 
+        beloved pet rocks, ensuring their eternal happiness and optimal well-being! We provide a meticulous blend of expert attention, 
+        imaginative engagement, and a touch of magical charm! Join us in this perfect paradise for your pet rock!</p>
+    </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>Rocks stay happy with our caretakers who give them loving care and companionship.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>JOB DONE</h4>
+      <p>Don't take us for granite, our pet rock care services are solid!</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>Here at Pebble Paradise, our workers are self-certified in all of our rock care services!</p>
+    </div>
+  </div>
+  <br><br>
+</div>
+
+<!-- Container (Packages Section) -->
+<div id="packages" class="container-fluid">
+  <div class="text-center">
+    <h2>Packages</h2>
+    <h4>Choose a package that works for you</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Rock Grooming</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong><i>Get your pet rock gleaming and feeling as solid as a million pebbles at our deluxe 
+            rock grooming spa! We offer rock shines, crystal soaks, and have an exclusive stone tumbler.</i></strong></p>
+          
+        </div>
+        <div class="panel-footer">
+          <h3>35 Doubloons</h3>
+          <h4>per month</h4>
+          <button class="btn">  
+          <a href="https://pebbleparadise.com/payment.html">Sign Up</a></button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Rock Sitting</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong><i>For any travel needs, Pebble Paradise will come to you to care for your rock in the comfort of 
+            their home. We will feed them, walk them, and provide companionship.</i></strong></p>
+          
+        </div>
+        <div class="panel-footer">
+          <h3>45 Doubloons</h3>
+          <h4>per day</h4>
+          <button class="btn"><a href="https://pebbleparadise.com/payment_rocksitting.html">Sign Up</a></button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Camp Pebbleville</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong><i>Join our rockin' summer camp! Unearth new friendships, build rock-solid connections,
+            and let your pet rock roll with the coolest stones in our 3-week extravaganza!</i></strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>70 Doubloons</h3>
+          <h4>per week</h4>
+          <button class="btn button"><a href="https://pebbleparadise.com/payment_camppebbleville.html">Sign Up</a></button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Us</h2><br>
+      <h4>At Pebble Paradise, we understand that pets come in all shapes and sizes, and that's why we're proud to introduce our unique 
+        services tailored specifically for rock enthusiasts. We recognize the special place that rocks hold in your heart. It's time to
+        give back to these steadfast companions that have been with you through thick and thin.</h4><br>
+      <p>We've crafted a paradise where your precious pet rocks can thrive. With a deep appreciation for geology and a passion for 
+        all things rocky, we've designed a safe and nurturing environment that caters to your mineral companions' every need. 
+        Become a part of our growing community of rock lovers who understand the value of these stoney companions. Contact us today to 
+        learn more about our services and how we can provide your pet rocks with the care, love, and attention they truly 
+        derserve. At Pebble Paradise, every rock is a cherished member of our family. </p>
+
+        <!-- <br><button class="btn btn-default btn-lg"><a href="#contact">Get in Touch</a></button> -->
+    </div>
+    <div class="col-sm-4">
+      <!--<span class="glyphicon glyphicon-signal logo"></span>-->
+      <img src="https://live.staticflickr.com/4178/34542906211_0399b3bdd5_b.jpg" height="200px" width="300px">
+    </div>
+  </div>
+</div>
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <!-- <div class="row"> -->
+   <!-- <div class="col-sm-5"> -->
+   <div class="panel-footer">
+   <div class="text-center">
+   
+   
+    <button class="btn btn-orange">
+          <a href="https://pebbleparadise.com/contact.html">Send us an email</a></button>
+      <p>We'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Bedrock, Stone Age, America</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +1 800-PEBBLES</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> pebbleparadisepeople@gmail.com</p>
+    </div>
+    <!-- </div> -->
+    <div class="col-sm-7 slideanim">
+      
+    
+        </div>
+      </div>
+    </div>
+
+
+<!-- Image of location/map -->
+<!-- <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%"> -->
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <h4>RESOURCES</h4>
+  <p>
+   A24 (2021). Everything Everywhere All At Once [Gif]. <a href="https://giphy.com/gifs/a24-jamie-lee-curtis-michelle-yeoh-everything-everywhere-all-at-once-TejmLnMKgnmPInMQjV?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=">giphy.com</a>
+  </p>
+  <p>
+  Shaull, L. (2017). Googly eyes in Rekjavik, Iceland [Photograph]. <a href="https://live.staticflickr.com/4178/34542906211_0399b3bdd5_b.jpg">staticflickr.com</a>
+  </p>
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
