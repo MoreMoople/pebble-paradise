@@ -1,0 +1,303 @@
+<html>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDG392MCRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NDG392MCRE');
+</script>
+
+<!-- Hotjar Tracking Code for https://pebbleparadise.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3683251,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+  
+<!-- Pebble Paradise tag (cloudflare) -->
+<script>
+
+  // URL contains Cloudflare worker function where we want to fetch data from
+  var url = 'https://unique-visitors.pebbleparadisepeople.workers.dev/';
+  
+  // Collect user's data and store it into "info"
+  document.addEventListener("DOMContentLoaded", function(){
+    const info = {   browserLang: navigator.browserLanguage,
+                     language: navigator.language,
+                     platform: navigator.platform,
+                     connectionSpeed: navigator.connectionSpeed,
+                     userAgent: navigator.UserAgent,
+                     webdriver: navigator.webdriver,
+                     geolocation: navigator.geolocation,
+                     deviceMemory: navigator.deviceMemory,
+                     networkInformation: navigator.networkInformation,
+                     connection: navigator.connection,
+                     globalPrivacyControl: navigator.globalPrivacyControl,
+                     maxTouchPoints: navigator.maxTouchPoints
+                  } 
+
+    // Talk to Cloudflare Worker function
+    // Once the info from the user is obtained, send the data to the worker function
+    // so that the worker function can store it into the database if it is different
+    // from any previous info entry or do nothing if it is the same
+    fetch(url, {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(info)                   
+    }) // end fetch
+      
+  }) //end document.addEventListener
+
+</script>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #648FFF;
+    padding: 20px 40px;
+}
+
+
+.white_container {
+  background: ghostwhite; 
+  font-size: 20px; 
+  padding: 20px; 
+  border: 1px solid lightgray; 
+  margin: 10px;
+  width: 70%
+}
+
+
+.card {
+    max-width: 80%;
+    margin: auto;
+    color: black;
+    border-radius: 20 px;
+}
+
+p {
+    margin: 0px;
+}
+
+
+.container .h8 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    
+}
+
+.btn.btn-primary {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto;
+
+}
+
+
+.btn.btn.btn-primary:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.btn.btn-primary:hover .fas.fa-arrow-right {
+    transform: translate(15px);
+    transition: transform 0.2s ease-in;
+}
+
+.form-control {
+    color: white;
+    background-color: #785EF0;
+    border: 2px solid transparent;
+    height: 40px;
+    width: 100%;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.form-control:focus {
+    color: white;
+    background-color: #0C4160;
+    border: 2px solid #2d4dda;
+    box-shadow: none;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 2px
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.br {
+  display: block;
+  margin-bottom: 0.4em;
+}
+
+.br1 {
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+/* Style for the horizontal button container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  
+}
+
+/* Style for each individual button */
+.button-container .btn {
+  flex: 1; /* Equal width for all buttons */
+  margin-right: 5px; /* Add some spacing between buttons */
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+/* Style for showing price on hover */
+.button-container .btn .button-price {
+  opacity: 0; /* Initially hide the price text */
+  transition: opacity 0.3s; /* Add a transition effect for smooth appearance */
+  margin-left: 5px; /* Add spacing between text and price */
+
+}
+
+.button-container .btn:hover .button-price {
+  opacity: 1; /* Show the price text on hover */
+}
+/* Show the price text on hover */
+.button-container .btn:hover .ps-3 {
+  display: none;
+}
+
+/* Show the regular text when not hovered */
+.button-container .btn:not(:hover) .ps-3 {
+  display: inline;
+}
+.button-container .btn:not(:hover) .button-price {
+  display: none;
+}
+
+
+::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+    color: #F7EEDA;
+}
+
+  
+</style>
+
+<head><link rel="icon" href="https://pebbleparadise.com/PebbleParadise.png"></head>
+
+<div class="white_container">
+
+<div class="container p-0">
+        <div class="card px-4">
+            <p class="h8 py-3">Payment Details</p>
+            <span class="br"></span>
+            <div class="row gx-3">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Person Name</p>
+                    <input class="form-control mb-3" type="text" placeholder="Dwayne Johnson">
+                </div>
+            </div>
+            <span class="br"></span>
+            
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">DB Charge Number</p>
+                    <input class="form-control mb-3" type="text" placeholder="1234 5678">
+                </div>
+            
+            <span class="br"></span>
+
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Expiration Date</p>
+                    <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                </div>
+                <span class="br"></span>
+
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">DVV/DVC</p>
+                        <input class="form-control mb-3" type="password" placeholder="***">
+
+              <span class="br1"></span>
+                </div>
+
+
+                <div class="col-12">
+                    <!-- Horizontal button container -->
+        <div class="button-container">
+          <div class="btn btn-primary">
+            <b>
+              <span class="ps-3">Rock Grooming</span>
+              <span class="button-price">35 Doubloons</span>
+            </b>
+            <span class="fas fa-arrow-right"></span>
+          </div>
+          <div class="btn btn-primary">
+            <b>
+              <span class="ps-3">Rock Sitting</span>
+              <span class="button-price">45 Doubloons</span>
+            </b>
+            <span class="fas fa-arrow-right"></span>
+          </div>
+          <div class="btn btn-primary">
+            <b>
+              <span class="ps-3">Camp Pebbleville</span>
+              <span class="button-price">70 Doubloons</span>
+            </b>
+            <span class="fas fa-arrow-right"></span>
+          </div>
+        </div>
+                </div>
+            </div>
+            </div>
+</div> 
+</html>
