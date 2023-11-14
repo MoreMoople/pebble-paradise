@@ -14,3 +14,24 @@ p {
 body,h1,h2,h3,h4,h5,h6,.w3-wide {
   font-family: "Montserrat", sans-serif;
 }
+
+.cl-home-search-query {
+    margin: 10px 10px 15px 5px;
+}
+.cl-search-dropdown {
+    position: relative;
+    margin-top: 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    font-size: 16px;
+    text-align: left;
+}
+
