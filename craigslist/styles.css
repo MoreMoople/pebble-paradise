@@ -2,12 +2,12 @@
 body {
   background-color: powderblue;
 }
-h1 {
+/* h1 {
   color: blue;
-}
-p {
+} */
+/* p {
   color: red;
-}
+} */
 .w3-sidebar a {
   font-family: "Roboto", sans-serif
 }
@@ -35,3 +35,33 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
     text-align: left;
 }
 
+[class^="icom-"], [class*=" icom-"] {
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.w3-left{
+  display: inline-block;
+  text-align: center;
+  padding: 20px
+}
+
+.cl-home-search-query.wide{
+  display: inline-block;
+  flex: 1;
+}
+
+.w3-right{
+  display: inline-block;
+}
+
+.w3-bar-item.w3-padding{
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  padding: 10px;
+}
