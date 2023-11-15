@@ -1,0 +1,48 @@
+<html>
+
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<div ng-app="panda">
+  <div ng-controller="main">
+    <h2>Craiglist</h2>        
+    <form ng-submit="searching()">
+      <input ng-model="search" type="text"/>    
+    </form>
+    
+    <table class="zui-table">
+      
+      <thead>
+        <th ng-repeat="(key,value) in list[0]">{{key}}</th>
+      </thead>
+      
+      <tbody>
+        <tr ng-repeat="koi in list">
+          <td ng-repeat="(key,value) in koi">{{value}}</td>
+        </tr>
+      </tbody>
+    
+    </table>
+
+
+  </div>
+</div>
+
+<script>
+    var app = angular.module("panda", []);
+
+app.controller("main", function($scope,$http) {
+    $scope.list=[]
+    $scope.searching=function(text){
+        $http.post("/craiglist",{search:$scope.search}).then(data=>{
+            console.log(data.data)
+            $scope.list=data.data
+        })
+    }
+});
+
+</script>
+</html>
