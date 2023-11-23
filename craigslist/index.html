@@ -53,10 +53,10 @@
     </div>
 
     <!-- SERVICES SECTION -->
-    <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align dropdown-btn" onclick="toggleDropdown('communityDropdown')">
+    <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align dropdown-btn" onclick="toggleDropdown('serviceDropdown')">
       Services<i class="fa fa-caret-down"></i>
     </a>
-    <div id="communityDropdown" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+    <div id="serviceDropdown" class="w3-bar-block w3-hide w3-padding-large w3-medium">
       <a href="" class="w3-bar-item w3-button">Activities</a>
       <a href="" class="w3-bar-item w3-button">Artists</a>
       <a href="" class="w3-bar-item w3-button">Childcare</a>
@@ -257,6 +257,11 @@
   // Attach click event listener to the Community dropdown button
   document.getElementById("communityBtn").addEventListener("click", function() {
     toggleDropdown("communityDropdown");
+  });
+
+  // Attach click event listener to the Services dropdown button
+  document.getElementById("serviceBtn").addEventListener("click", function() {
+    toggleDropdown("serviceDropdown");
   });
   
   //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
