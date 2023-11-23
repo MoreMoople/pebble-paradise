@@ -42,13 +42,12 @@
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
 
     <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align dropdown-btn" onclick="toggleDropdown('communityDropdown')">
-  TESTING <i class="fa fa-caret-down"></i>
+      Community<i class="fa fa-caret-down"></i>
     </a>
     <div id="communityDropdown" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="https://lascruces.craigslist.org/search/act#search=1~list~0~0" class="w3-bar-item w3-button">Activities</a>
+      <a href="https://lascruces.craigslist.org/search/ats#search=1~list~0~0" class="w3-bar-item w3-button">Artists</a>
+      <a href="https://lascruces.craigslist.org/search/kid#search=1~list~0~0" class="w3-bar-item w3-button">Childcare</a>
     </div>
 
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
@@ -171,33 +170,34 @@
       dropdown.style.display = "none";
     } else {
       dropdown.style.display = "block";
-    }
+    } // end if/else
+  } // end function
+
+  // Attach click event listener to the Community dropdown button
+  document.getElementById("communityBtn").addEventListener("click", function() {
+    toggleDropdown("communityDropdown");
+  });
+  
+  //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+  
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
   }
 
-// Attach click event listener to the Community dropdown button
-document.getElementById("communityBtn").addEventListener("click", function() {
-  toggleDropdown("communityDropdown");
-});
-//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-
-function toggleDropdown(dropdownId) {
-  var dropdown = document.getElementById(dropdownId);
-  dropdown.classList.toggle("w3-show"); // Toggle the "w3-show" class
-}
+  function toggleDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.classList.toggle("w3-show"); // Toggle the "w3-show" class
+  }
 
 
 </script>
