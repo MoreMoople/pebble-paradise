@@ -17,8 +17,9 @@
   </div>
   
   <!-- Favorites Section -->
-    <div class="w3-bar-item w3-padding">
+    <div class="w3-bar-item w3-padding" ondragover="allowDrop(event)" ondrop="drop(event)">
       <b>Favorites</b>
+      <div id="favorites" class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold" ondragover="allowDrop(event)" ondrop="drop(event)">
       <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
       <!-- Add your favorite links here -->
       <a href="#" class="w3-bar-item w3-button">Favorite Link 1</a>
@@ -46,7 +47,7 @@
       Community <i class="fa fa-caret-down"></i>
     </a>
     <div id="communityDropdown" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="https://lascruces.craigslist.org/search/act#search=1~list~0~0" class="w3-bar-item w3-button">Activities</a>
+      <a href="https://lascruces.craigslist.org/search/act#search=1~list~0~0" class="w3-bar-item w3-button" draggable="true" ondragstart="drag(event)">Activities</a>
       <a href="https://lascruces.craigslist.org/search/ats#search=1~list~0~0" class="w3-bar-item w3-button">Artists</a>
       <a href="https://lascruces.craigslist.org/search/kid#search=1~list~0~0" class="w3-bar-item w3-button">Childcare</a>
       <a href="https://lascruces.craigslist.org/search/cls#search=1~list~0~0" class="w3-bar-item w3-button">Classes</a>
@@ -464,6 +465,26 @@
   function toggleDropdown(dropdownId) {
     var dropdown = document.getElementById(dropdownId);
     dropdown.classList.toggle("w3-show"); // Toggle the "w3-show" class
+  }
+
+  // Functions for drag and drop favorites bar
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.textContent);
+  }
+
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var favorites = document.getElementById("favorites");
+    var link = document.createElement("a");
+    link.setAttribute("href", "#");
+    link.setAttribute("class", "w3-bar-item w3-button");
+    link.innerText = data;
+    favorites.appendChild(link);
   }
 
 
