@@ -494,7 +494,8 @@
       var link = document.createElement("a");
       link.setAttribute("href", data); // Set the href attribute to the stored URL
       link.setAttribute("class", "w3-bar-item w3-button");
-      link.innerText = data; // Display the URL text
+      // Display user-friendly link text (e.g., extracted from the URL)
+      link.innerText = new URL(data).pathname.split('/').pop().split('#')[0];
       favorites.appendChild(link);
     }
   }
