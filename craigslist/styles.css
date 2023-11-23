@@ -45,6 +45,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
     line-height: 1;
 }
 
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
 .w3-left{
   display: inline-block;
   text-align: center;
