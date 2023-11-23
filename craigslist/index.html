@@ -476,7 +476,7 @@
   var favoriteLinks = [];
 
   function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.href); // Store the URL instead of the text content
+    ev.dataTransfer.setData("text", ev.target.textContent);
   }
 
   function allowDrop(ev) {
@@ -486,18 +486,12 @@
   function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    
-    // Check if the link already exists in favorites
-    if (!favoriteLinks.includes(data)) {
-      favoriteLinks.push(data);
-      var favorites = document.getElementById("favorites");
-      var link = document.createElement("a");
-      link.setAttribute("href", data); // Set the href attribute to the stored URL
-      link.setAttribute("class", "w3-bar-item w3-button");
-      // Display user-friendly link text (e.g., extracted from the URL)
-      link.innerText = new URL(data).pathname.split('/').pop().split('#')[0];
-      favorites.appendChild(link);
-    }
+    var favorites = document.getElementById("favorites");
+    var link = document.createElement("a");
+    link.setAttribute("href", "#");
+    link.setAttribute("class", "w3-bar-item w3-button");
+    link.innerText = data;
+    favorites.appendChild(link);
   }
 
 
