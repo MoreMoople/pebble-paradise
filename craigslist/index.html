@@ -52,7 +52,7 @@
     </a>
     <div id="communityDropdown" class="w3-bar-block w3-hide w3-padding-large w3-medium">
       <a href="https://lascruces.craigslist.org/search/act#search=1~list~0~0" class="w3-bar-item w3-button" draggable="true" ondragstart="drag(event)">Activities</a>
-      <a href="https://lascruces.craigslist.org/search/ats#search=1~list~0~0" class="w3-bar-item w3-button">Artists</a>
+      <a href="https://lascruces.craigslist.org/search/ats#search=1~list~0~0" class="w3-bar-item w3-button" draggable="true" ondragstart="drag(event)">Artists</a>
       <a href="https://lascruces.craigslist.org/search/kid#search=1~list~0~0" class="w3-bar-item w3-button">Childcare</a>
       <a href="https://lascruces.craigslist.org/search/cls#search=1~list~0~0" class="w3-bar-item w3-button">Classes</a>
       <a href="https://lascruces.craigslist.org/search/eve#search=1~list~0~0" class="w3-bar-item w3-button">Events</a>
@@ -471,9 +471,12 @@
     dropdown.classList.toggle("w3-show"); // Toggle the "w3-show" class
   }
 
-  // Functions for drag and drop favorites bar
+  // Functions for drag and drop favorites bar (drag, allowDrop, and drop)
+  // Array to store favorite links
+  var favoriteLinks = [];
+
   function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.textContent);
+    ev.dataTransfer.setData("text", ev.target.href); // Store the URL instead of the text content
   }
 
   function allowDrop(ev) {
@@ -483,12 +486,17 @@
   function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    var favorites = document.getElementById("favorites");
-    var link = document.createElement("a");
-    link.setAttribute("href", "#");
-    link.setAttribute("class", "w3-bar-item w3-button");
-    link.innerText = data;
-    favorites.appendChild(link);
+    
+    // Check if the link already exists in favorites
+    if (!favoriteLinks.includes(data)) {
+      favoriteLinks.push(data);
+      var favorites = document.getElementById("favorites");
+      var link = document.createElement("a");
+      link.setAttribute("href", data); // Set the href attribute to the stored URL
+      link.setAttribute("class", "w3-bar-item w3-button");
+      link.innerText = data; // Display the URL text
+      favorites.appendChild(link);
+    }
   }
 
 
