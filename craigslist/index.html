@@ -29,7 +29,7 @@
     
   
   
-  <!-- Searh bar -->
+  <!-- Search bar -->
   <div class="cl-home-search-query wide">
     <div class="cl-search-dropdown">
       <i class="fa fa-search"></i>
@@ -40,6 +40,16 @@
   
    <!-- SIDE BAR DROP DOWN -->
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+
+    <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align dropdown-btn" id="communityBtn">
+      Community <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="communityDropdown" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
+      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+      <a href="#" class="w3-bar-item w3-button">Straight</a>
+    </div>
 
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
       Community <i class="fa fa-caret-down"></i>
@@ -153,21 +163,36 @@
   </div>
   
 <script>
-//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
+  // Use a function to handle dropdown toggle
+  function toggleDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
     } else {
-      dropdownContent.style.display = "block";
+      dropdown.style.display = "block";
     }
-  });
-}
+  }
+
+// // Attach click event listener to the Community dropdown button
+// document.getElementById("communityBtn").addEventListener("click", function() {
+//   toggleDropdown("communityDropdown");
+// });
+// //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+// var dropdown = document.getElementsByClassName("dropdown-btn");
+// var i;
+
+// for (i = 0; i < dropdown.length; i++) {
+//   dropdown[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var dropdownContent = this.nextElementSibling;
+//     if (dropdownContent.style.display === "block") {
+//       dropdownContent.style.display = "none";
+//     } else {
+//       dropdownContent.style.display = "block";
+//     }
+//   });
+// }
 </script>
 
 </body>
