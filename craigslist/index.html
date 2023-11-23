@@ -40,7 +40,23 @@
   
    <!-- SIDE BAR DROP DOWN -->
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+
+<!-- Kelsey: Trying to fix drop down menus   -->
+    <div class="dropdown">
+      
+      <button class="w3-button w3-block w3-white w3-left-align" id="myBtn" onclick="myFunction()">Community
+      <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="w3-bar-block w3-hide w3-padding-large w3-medium" id="demoAcc">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <!-- Kelsey: Trying to fix drop down menus   -->
+
+    
+<!--     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
       Community <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
@@ -48,7 +64,7 @@
       <a href="#" class="w3-bar-item w3-button">Relaxed</a>
       <a href="#" class="w3-bar-item w3-button">Bootcut</a>
       <a href="#" class="w3-bar-item w3-button">Straight</a>
-    </div>
+    </div> -->
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
       Services <i class="fa fa-caret-down"></i>
     </a>
@@ -149,7 +165,24 @@
   </div>
   
   </div>
+  
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script>
 
 </body>
 </html>
