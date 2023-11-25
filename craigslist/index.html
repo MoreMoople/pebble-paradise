@@ -456,7 +456,7 @@
   }
 
   // connect all links to their name
-  var originalURLs = {
+  /*var originalURLs = {
     // community
     "Activities": "https://lascruces.craigslist.org/search/act#search=1~list~0~0",
     "Artists": "https://lascruces.craigslist.org/search/ats#search=1~list~0~0",
@@ -473,7 +473,7 @@
     "Politics": "https://lascruces.craigslist.org/search/pol#search=1~list~0~0",
     "Rants & Raves": "https://lascruces.craigslist.org/search/rnr#search=1~list~0~0",
     "Rideshare": "https://lascruces.craigslist.org/search/rid#search=1~list~0~0",
-    "Volunteers": "https://lascruces.craigslist.org/search/vol#search=1~list~0~0",
+    "Volunteers": "https://lascruces.craigslist.org/search/vol#search=1~list~0~0"
 
     // services
     "Automotives": "",
@@ -551,7 +551,13 @@
     "Words": "",
     "Writing": ""
     //"": "",
-  };
+  };*/
+
+  var originalLinkTexts = [];
+  var originalURLs = [];
+
+  originalLinkTexts.push("Activities");
+  originalLinkTexts.push("https://lascruces.craigslist.org/search/act#search=1~list~0~0");
   
   function drop(ev) {
     ev.preventDefault();
@@ -559,22 +565,17 @@
     var favorites = document.getElementById("favorites");
 
     // get URLs
-    var originalURL = originalURLs[data];
+    var index = originalLinkTexts.indexOf(data);
     
     // check if link already exists in favorites
-    var existingLinks = favorites.getElementsByTagName("a");
-    var linkExists = false;
+    if (index !== -1 && originalURLs[index]) {
+      var linkExists = Array.from(favorites.getElementsByTagName("a").some(function(existingLink) {
+        return existingLink.innerText === data;
+    });
 
-    for (var i = 0; i < existingLinks.length; i++) {
-      if (existingLinks[i].innerText === data) {
-        linkExists = true;
-        break;
-      }
-    }
-
-    if (!linkExists && originalURL) {
+    if (!linkExists) {
       var link = document.createElement("a");
-      link.setAttribute("href", originalURL);
+      link.setAttribute("href", originalURLs[index]);
       link.setAttribute("class", "w3-bar-item w3-button");
       link.innerText = data;
       favorites.appendChild(link);
