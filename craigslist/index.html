@@ -459,11 +459,25 @@
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     var favorites = document.getElementById("favorites");
-    var link = document.createElement("a");
-    link.setAttribute("href", "#");
-    link.setAttribute("class", "w3-bar-item w3-button");
-    link.innerText = data;
-    favorites.appendChild(link);
+
+    // check if link already exists in favorites
+    var existingLinks = favorites.getElementsByTagName("a");
+    var linkExists = false;
+
+    for (var i = 0; i < existingLinks.length; i++) {
+      if (existingLinks[i].innerText === data) {
+        linkExists = true;
+        break;
+      }
+    }
+
+    if (!linkExists) {
+      var link = document.createElement("a");
+      link.setAttribute("href", "#");
+      link.setAttribute("class", "w3-bar-item w3-button");
+      link.innerText = data;
+      favorites.appendChild(link);
+    }
   }
 
 
