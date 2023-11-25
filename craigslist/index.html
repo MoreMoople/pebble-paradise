@@ -455,30 +455,37 @@
     ev.preventDefault();
   }
 
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var favorites = document.getElementById("favorites");
+  // Storing original URLs and link texts separately
+var originalLinkTexts = [];
+var originalURLs = [];
 
-    // check if link already exists in favorites
-    var existingLinks = favorites.getElementsByTagName("a");
-    var linkExists = false;
+// Add links and their URLs to the arrays
+originalLinkTexts.push("Activities");
+originalURLs.push("https://lascruces.craigslist.org/search/act#search=1~list~0~0");
 
-    for (var i = 0; i < existingLinks.length; i++) {
-      if (existingLinks[i].innerText === data) {
-        linkExists = true;
-        break;
-      }
-    }
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  var favorites = document.getElementById("favorites");
+
+  var index = originalLinkTexts.indexOf(data);
+  
+  // Check if the link already exists in favorites and if the URL is available
+  if (index !== -1 && originalURLs[index]) {
+    var linkExists = Array.from(favorites.getElementsByTagName("a")).some(function(existingLink) {
+      return existingLink.innerText === data;
+    });
 
     if (!linkExists) {
       var link = document.createElement("a");
-      link.setAttribute("href", "#");
+      link.setAttribute("href", originalURLs[index]);
       link.setAttribute("class", "w3-bar-item w3-button");
       link.innerText = data;
       favorites.appendChild(link);
     }
   }
+}
+
 
 
 </script>
