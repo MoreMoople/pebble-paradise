@@ -455,21 +455,111 @@
     ev.preventDefault();
   }
 
+  // connect all links to their name
+  var originalURLs = {
+    // community
+    "Activities": "https://lascruces.craigslist.org/search/act#search=1~list~0~0",
+    "Artists": "https://lascruces.craigslist.org/search/ats#search=1~list~0~0",
+    "Childcare": "https://lascruces.craigslist.org/search/kid#search=1~list~0~0",
+    "Classes": "https://lascruces.craigslist.org/search/cls#search=1~list~0~0",
+    "Events": "https://lascruces.craigslist.org/search/eve#search=1~list~0~0",
+    "General": "https://lascruces.craigslist.org/search/com#search=1~list~0~0",
+    "Groups": "https://lascruces.craigslist.org/search/grp#search=1~list~0~0",
+    "Local News": "https://lascruces.craigslist.org/search/vnn#search=1~list~0~0",
+    "Lost + Found": "https://lascruces.craigslist.org/search/laf#search=1~list~0~0",
+    "Missed Connections": "https://lascruces.craigslist.org/search/mis#search=1~list~0~0",
+    "Musicians": "https://lascruces.craigslist.org/search/muc#search=1~list~0~0",
+    "Pets": "https://lascruces.craigslist.org/search/pet#search=1~list~0~0",
+    "Politics": "https://lascruces.craigslist.org/search/pol#search=1~list~0~0",
+    "Rants & Raves": "https://lascruces.craigslist.org/search/rnr#search=1~list~0~0",
+    "Rideshare": "https://lascruces.craigslist.org/search/rid#search=1~list~0~0",
+    "Volunteers": "https://lascruces.craigslist.org/search/vol#search=1~list~0~0",
+
+    // services
+    "Automotives": "",
+    "Beauty": "",
+    "Cell/Mobile": "",
+    "Computer": "",
+    "Creative": "",
+    "Cycle": "",
+    "Event": "",
+    "Farm+Garden": "",
+    "Financial": "",
+    "Health/Well": "",
+    "Household": "",
+    "Labor/Move": "",
+    "Legal": "",
+    "Lessons": "",
+    "Marine": "",
+    "Pet": "",
+    "Real Estate": "",
+    "Skilled Trade": "",
+    "Small Biz Ads": "",
+    "Travel/Vac": "",
+    "Write/Ed/Tran": "",
+
+    // discussion
+    "Mac": "",
+    "Arts": "",
+    "Atheist": "",
+    "Autos": "",
+    "Beauty": "",
+    "Bikes": "",
+    "Celebs": "",
+    "Comp": "",
+    "Cosmos": "",
+    "Diet": "",
+    "Divorce": "",
+    "Dying": "",
+    "Eco": "",
+    "Feedback": "",
+    "Film": "",
+    "Fixit": "",
+    "Food": "",
+    "Frugal": "",
+    "Gaming": "",
+    "Garden": "",
+    "Haiku": "",
+    "Help": "",
+    "History": "",
+    "Housing": "",
+    "Jobs": "",
+    "Jokes": "",
+    "Legal": "",
+    "Manners": "",
+    "Marriage": "",
+    "Money": "",
+    "Music": "",
+    "Open": "",
+    "Parent": "",
+    "Pets": "",
+    "Philos": "",
+    "Photo": "",
+    "Politics": "",
+    "Psych": "",
+    "Recover": "",
+    "Religion": "",
+    "Rofo": "",
+    "Science": "",
+    "Spirit": "",
+    "Sports": "",
+    "Super": "",
+    "Tax": "",
+    "Travel": "",
+    "TV": "",
+    "Vegan": "",
+    "Words": "",
+    "Writing": ""
+    //"": "",
+  };
+  
   function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     var favorites = document.getElementById("favorites");
 
-    // get link destination from navbar
-    var originalLinks = document.querySelectorAll(".w3-bar-item.w3-button");
-    var originalURL;
-
-    for(var i = 0; i < originalLinks.length; i++) {
-      if (originalLinks[i].innerText === data) {
-        originalURL = originalLinks[i].getAttribute("href");
-        break;
-      }
-    }
+    // get URLs
+    var originalURL = originalURLs[data];
     
     // check if link already exists in favorites
     var existingLinks = favorites.getElementsByTagName("a");
@@ -482,7 +572,7 @@
       }
     }
 
-    if (!linkExists) {
+    if (!linkExists && originalURL) {
       var link = document.createElement("a");
       link.setAttribute("href", originalURL);
       link.setAttribute("class", "w3-bar-item w3-button");
