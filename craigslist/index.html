@@ -469,9 +469,18 @@ function drop(ev) {
 
   console.log("Data:", data); // Check the value of 'data'
 
-  var linkObj = originalLinks.find(function (link) {
+  /*var linkObj = originalLinks.find(function (link) {
     return link.text === data;
-  });
+  });*/
+
+var linkObj = null;
+for (var i = 0; i < originalLinks.length; i++) {
+  if (originalLinks[i].text === data) {
+    linkObj = originalLinks[i];
+    break;
+  }
+}
+
 
   console.log("Link Object:", linkObj); // Check the value of 'linkObj'
 
