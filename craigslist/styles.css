@@ -64,7 +64,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
 
 .w3-sidebar.right-sidebar.w3-bar-block.w3-white.w3-collapse.w3-top{
    background-color: #f1f1f1; /* Set your preferred background color */
-   width: 100px !important; /* Half the width of the left sidebar */
+   width: 125px !important; /* Half the width of the left sidebar */
    float: right;
 }
 
@@ -72,7 +72,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
   flex: 1; /* Take remaining space in the flex container */
   /* max-width: calc(100% - 250px); */ /* Adjust for the sidebar width */
   margin-left: 250px; /* Match the width of the sidebar */
-  margin-right: 100px;
+  margin-right: 125px;
 }
 
 /* Sidebar/menu */
