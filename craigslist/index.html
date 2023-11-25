@@ -455,36 +455,38 @@
     ev.preventDefault();
   }
 
-  // Storing original URLs and link texts separately
-var originalLinkTexts = [];
-var originalURLs = [];
-
-// Add links and their URLs to the arrays
-originalLinkTexts.push("Activities");
-originalURLs.push("https://lascruces.craigslist.org/search/act#search=1~list~0~0");
+  // Storing original URLs and link texts in an array of objects
+var originalLinks = [
+  { text: "Activities", url: "https://lascruces.craigslist.org/search/act#search=1~list~0~0" },
+  { text: "Artists", url: "https://lascruces.craigslist.org/search/ats#search=1~list~0~0" }
+  // Add more objects with link text and URL as needed
+];
 
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   var favorites = document.getElementById("favorites");
 
-  var index = originalLinkTexts.indexOf(data);
-  
+  var linkObj = originalLinks.find(function (link) {
+    return link.text === data;
+  });
+
   // Check if the link already exists in favorites and if the URL is available
-  if (index !== -1 && originalURLs[index]) {
+  if (linkObj) {
     var linkExists = Array.from(favorites.getElementsByTagName("a")).some(function(existingLink) {
       return existingLink.innerText === data;
     });
 
     if (!linkExists) {
       var link = document.createElement("a");
-      link.setAttribute("href", originalURLs[index]);
+      link.setAttribute("href", linkObj.url);
       link.setAttribute("class", "w3-bar-item w3-button");
       link.innerText = data;
       favorites.appendChild(link);
     }
   }
 }
+
 
 
 
