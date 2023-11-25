@@ -460,6 +460,17 @@
     var data = ev.dataTransfer.getData("text");
     var favorites = document.getElementById("favorites");
 
+    // get link destination from navbar
+    var originalLinks = document.querySelectorAll(".w3-bar-item.w3-button");
+    var originalURL;
+
+    for(var i = 0; i < originalLinks.length; i++) {
+      if (originalLinks[i].innerText === data) {
+        originalURL = originalLinks[i].getAttribute("href");
+        break;
+      }
+    }
+    
     // check if link already exists in favorites
     var existingLinks = favorites.getElementsByTagName("a");
     var linkExists = false;
@@ -473,7 +484,7 @@
 
     if (!linkExists) {
       var link = document.createElement("a");
-      link.setAttribute("href", "#");
+      link.setAttribute("href", originalURL);
       link.setAttribute("class", "w3-bar-item w3-button");
       link.innerText = data;
       favorites.appendChild(link);
