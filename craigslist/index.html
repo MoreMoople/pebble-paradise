@@ -455,7 +455,32 @@
     ev.preventDefault();
   }
 
-  // Storing original URLs and link texts in an array of objects
+   function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var favorites = document.getElementById("favorites");
+
+    // check if link already exists in favorites
+    var existingLinks = favorites.getElementsByTagName("a");
+    var linkExists = false;
+
+    for (var i = 0; i < existingLinks.length; i++) {
+      if (existingLinks[i].innerText === data) {
+        linkExists = true;
+        break;
+      }
+    }
+
+    if (!linkExists) {
+      var link = document.createElement("a");
+      link.setAttribute("href", "#");
+      link.setAttribute("class", "w3-bar-item w3-button");
+      link.innerText = data;
+      favorites.appendChild(link);
+    }
+  }
+
+ /* // Storing original URLs and link texts in an array of objects
 var originalLinks = [
   { text: "Activities", url: "https://lascruces.craigslist.org/search/act#search=1~list~0~0" },
   { text: "Artists", url: "https://lascruces.craigslist.org/search/ats#search=1~list~0~0" }
@@ -471,7 +496,7 @@ function drop(ev) {
 
   /*var linkObj = originalLinks.find(function (link) {
     return link.text === data;
-  });*/
+  });
 
 var linkObj = null;
 for (var i = 0; i < originalLinks.length; i++) {
@@ -497,7 +522,7 @@ for (var i = 0; i < originalLinks.length; i++) {
       favorites.appendChild(link);
     }
   }
-}
+}*/
 
 
 
