@@ -114,8 +114,4 @@ b {
     padding-top: 20px;
 }
 
-.w3-display-container.w3-container {
-    /* Add margin-bottom to create space between content and footer */
-    margin-bottom: 100px; /* Adjust the value as needed */
-}
 
