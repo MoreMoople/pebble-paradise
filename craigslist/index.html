@@ -467,11 +467,14 @@ function drop(ev) {
   var data = ev.dataTransfer.getData("text");
   var favorites = document.getElementById("favorites");
 
+  console.log("Data:", data); // Check the value of 'data'
+
   var linkObj = originalLinks.find(function (link) {
     return link.text === data;
   });
 
-  // Check if the link already exists in favorites and if the URL is available
+  console.log("Link Object:", linkObj); // Check the value of 'linkObj'
+
   if (linkObj) {
     var linkExists = Array.from(favorites.getElementsByTagName("a")).some(function(existingLink) {
       return existingLink.innerText === data;
