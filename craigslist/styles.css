@@ -89,3 +89,9 @@ b {
   padding: 5px;
 }
 
+.logo-image {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 1px; /* Add some space between the image and the text */
+}
+
