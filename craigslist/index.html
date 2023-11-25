@@ -557,7 +557,7 @@
   var originalURLs = [];
 
   originalLinkTexts.push("Activities");
-  originalLinkTexts.push("https://lascruces.craigslist.org/search/act#search=1~list~0~0");
+  originalURLs.push("https://lascruces.craigslist.org/search/act#search=1~list~0~0");
   
   function drop(ev) {
     ev.preventDefault();
@@ -573,12 +573,13 @@
         return existingLink.innerText === data;
     });
 
-    if (!linkExists) {
-      var link = document.createElement("a");
-      link.setAttribute("href", originalURLs[index]);
-      link.setAttribute("class", "w3-bar-item w3-button");
-      link.innerText = data;
-      favorites.appendChild(link);
+      if (!linkExists) {
+        var link = document.createElement("a");
+        link.setAttribute("href", originalURLs[index]);
+        link.setAttribute("class", "w3-bar-item w3-button");
+        link.innerText = data;
+        favorites.appendChild(link);
+      }
     }
   }
 
