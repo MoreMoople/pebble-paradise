@@ -95,3 +95,27 @@ b {
   margin-right: 1px; /* Add some space between the image and the text */
 }
 
+.footer {
+  background-color: #ddd; /* Grey background color */
+  padding: 20px; /* Add some padding for better visibility */
+  text-align: center; /* Center the text */
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-start; Align columns to the top */
+}
+
+.column {
+    flex: 1;
+    width: 50%; /* Adjust the width as needed */
+    box-sizing: border-box;
+    padding: 10px;
+    /* border: 1px solid #ccc; */ /* Optional: Add a border for visual separation */
+    text-align: left;
+    padding-top: 20px;
+}
+
+.w3-display-container.w3-container {
+    /* Add margin-bottom to create space between content and footer */
+    margin-bottom: 100px; /* Adjust the value as needed */
+}
+
