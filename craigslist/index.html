@@ -448,8 +448,22 @@
   var favoriteLinks = [];
 
   function drag(ev) {
+  var linkText = ev.target.textContent;
+  var linkURL = ev.target.getAttribute("href");
+
+  // Create a data object to store both the text and URL
+  var dataObject = {
+    text: linkText,
+    url: linkURL
+  };
+
+  // Convert the data object to a JSON string and set it as "text/plain" MIME type
+  ev.dataTransfer.setData("text/plain", JSON.stringify(dataObject));
+}
+
+  /*function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.textContent);
-  }
+  }*/
 
   function allowDrop(ev) {
     ev.preventDefault();
@@ -457,7 +471,13 @@
 
    function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    var data = ev.dataTransfer.getData("text/plain");
+
+    // parse JSON string back into an object
+     var dataObject = JSON.parse(data);
+
+     var linkText = dataObject.text;
+     var linkURL = dataObject.url;
     var favorites = document.getElementById("favorites");
 
     // check if link already exists in favorites
@@ -465,7 +485,7 @@
     var linkExists = false;
 
     for (var i = 0; i < existingLinks.length; i++) {
-      if (existingLinks[i].innerText === data) {
+      if (existingLinks[i].innerText === linkText) {
         linkExists = true;
         break;
       }
@@ -475,8 +495,8 @@
       var link = document.createElement("a");
       link.setAttribute("href", "#");
       link.setAttribute("class", "w3-bar-item w3-button");
-      link.innerText = data;
-      favorites.appendChild(link);
+      link.innerText = linkText;
+      favorites.appendChild(linkURL);
     }
   }
 
